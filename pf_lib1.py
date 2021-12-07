@@ -59,7 +59,7 @@ def find_peaks_and_or_valleys(raw_row, reduce_size, smooth_size):
     median_y = median(reduced_row)
     stdev_y = stdev(reduced_row)
     stdev_15 = stdev_y * 1.5
-    stdev_20 = stdev_y * 2
+    stdev_20 = stdev_y * 2 
     y = np.array(reduced_row)
     # print("StdDev: ", round(stdev_y,3))
     #invert data before finding peaks
