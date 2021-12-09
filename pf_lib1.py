@@ -85,30 +85,21 @@ def find_peaks_and_or_valleys(raw_row, reduce_size, smooth_size):
     median_y = median(reduced_row)
     stdev_y = stdev(reduced_row)
     stdev_15 = stdev_y * 1.5
-    stdev_20 = stdev_y * 2
+    stdev_20 = stdev_y * 2 
     y = np.array(reduced_row)
-
-    print("StdDev: ", stdev_y, ", 1.5 StdDev: ", stdev_15, 
-          ",2.0 StdDev: ", stdev_20)
-    # invert data before finding peaks
+    # print("StdDev: ", round(stdev_y,3))
+    #invert data before finding peaks
     if peak_scan == True:
-        ''' Use scipy find_peaks library. returns indexes of y that are
-        detected as peaks.
-        '''
-        peaks, peak_properties = find_peaks(
-            y, height=mean_y+stdev_15, distance=20, prominence=4, width=3
-        )
-        print("Peak properties: ", peak_properties)
-
+        """Use scipy find_peaks library. returns indexes of y that are detected as peaks."""
+        peaks, peak_properties = find_peaks(y, height=mean_y+stdev_15, distance = 20, prominence=4, width=3)
+        # print("Peak properties: ", peak_properties)
+    
     if valley_scan == True:
         """returns indexes of y that are detected as valleys"""
         y_inverse = ymax - y
         mean_y_inverse = ymax - mean_y
-        valleys, valley_properties = find_peaks(
-            y_inverse, height=mean_y_inverse+stdev_15, distance=20,
-            prominence=4, width=3
-        )
-        print("Valley properties: ", valley_properties)
+        valleys, valley_properties = find_peaks(y_inverse, height=mean_y_inverse+stdev_15, distance = 20, prominence=4, width=3)
+        # print("Valley properties: ", valley_properties)
 
     # TODO calculate peak and valley positions as diatance from center not
     # the reduced data location
