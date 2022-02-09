@@ -11,7 +11,7 @@ The github rep contains
 The python dependencies are 
 1) NumPy  2) SciPy  3) matplotlib  4) math  5) statistics
 
-Please feel free to contact me with errors or suggestion for additional features at <a href="mailto:jessica.westfall@colorado.edu?subject=[GitHub]%20peak-finder">[Jessica Westfall]</a>
+Please feel free to contact me with errors or suggestion for additional features at <a href="mailto:jessica.westfall@colorado.edu?subject=[GitHub]%20peak-finder">Jessica Westfall</a>
 
 
 ![peak/valley output histo png image](https://github.com/jessicatwes/peak-finder/blob/main/images/peak_output.png)
